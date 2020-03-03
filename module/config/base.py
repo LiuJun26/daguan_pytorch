@@ -1,4 +1,4 @@
-from  pathlib import Path
+from pathlib import Path
 Base_Dir = Path("module")
 config = {
     "data_dir": Base_Dir / "dataset",

@@ -57,3 +57,46 @@ def load_pickle(input_file):
     with open(str(input_file), 'rb') as file:
         data = pickle.load(file)
         return data
+
+
+def save_json(data, file＿path):
+
+    """
+    将数据保存到json文件中　
+    :param data:
+    :param file＿path:
+    :return:
+    """
+    if isinstance(file＿path, Path):
+        file＿path = str(file＿path)
+    with open(file＿path, 'w') as file:
+        json.dump(data, file)
+
+
+def load_json(file_path):
+    """
+    加载json文本中数据
+    :param file_path:
+    :return:
+    """
+    if isinstance(file_path, Path):
+        file_path = str(file_path)
+    with open(file_path, 'r') as f:
+        data = json.load(f)
+    return data
+
+
+def seed_everything(seed=9527):
+    """
+    设置整个开发护环境的随机数种子
+    :param seed:
+    :return:
+    """
+    random.seed(seed)
+    os.environ["seed"] = str(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
+
+    torch.backends.cudnn.deterministic = True
