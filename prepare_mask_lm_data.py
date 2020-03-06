@@ -208,6 +208,7 @@ def main():
             for idx in range(args.file_num):
                 logger.info(f"pre_generate file_{idx}.json")
                 save_filename = data_path / f"file_{idx}.json"
+                # 这里这样重复保存的作用是什么没搞定，每一个保存的file_idx.json文件内容都是一样.
                 num_instances = 0
                 # 要保存的文件名
                 with save_filename.open("w") as fw:

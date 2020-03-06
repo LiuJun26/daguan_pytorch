@@ -100,3 +100,24 @@ def seed_everything(seed=9527):
     torch.cuda.manual_seed_all(seed)
 
     torch.backends.cudnn.deterministic = True
+
+class AverageMeter(object):
+
+    def __len__(self):
+        self.reset()
+
+    def reset(self):
+        self.val = 0
+        self.avg = 0
+        self.sum = 0
+        self.count = 0
+
+    def update(self,val, n=1):
+        self.val = val
+        self.sum += val * n
+        self.count += n
+        self.avg = self.sum / self.count
+
+
+
+
