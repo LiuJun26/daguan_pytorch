@@ -190,7 +190,7 @@ def main():
             logger.info(f"vocab size:{len(vocab)}")
             bert_base_config["vocab_size"] = len(vocab)
             # 重新保存bert的配置文件
-            save_json(data=bert_base_config, file＿path=config["data_dir"] / "config.json")
+            save_json(data=bert_base_config, file＿path=config["checkpoint_dir"] / "config.json")
 
         if args.do_data:
             vocab_list = vocab.load_bert_vocab(config["checkpoint_dir"] / "vocab.txt")

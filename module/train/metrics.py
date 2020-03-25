@@ -52,6 +52,6 @@ class LMAccuracy(Metric):
         return float(self.correct_k) / self.total
 
     def name(self):
-        # 准确度
+        # 精确率
         return "accuracy"
 

@@ -6,6 +6,7 @@ from module.common.tools import init_logger
 from module.common.tools import save_pickle
 from module.common.tools import load_pickle
 from sklearn.model_selection import StratifiedKFold
+from sklearn.model_selection import train_test_split
 
 
 def data_aug1(data):

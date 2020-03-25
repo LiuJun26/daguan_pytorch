@@ -101,6 +101,7 @@ def seed_everything(seed=9527):
 
     torch.backends.cudnn.deterministic = True
 
+
 class AverageMeter(object):
 
     def __len__(self):
