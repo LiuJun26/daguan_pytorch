@@ -163,7 +163,7 @@ def main():
         raise ValueError(f"Invalid gradient_accumulation_steps parameters: { args.gradient_accumulation_steps}")
 
     # 此处没有理解
-    args.train_batch_size = args.train_batch_size // args.gradient_accumulationm_steps
+    args.train_batch_size = args.train_batch_size // args.gradient_accumulation_steps
     seed_everything(args.seed)
 
     tokenizer = BertTokenizer(vocab_file=config["checkpoint_dir"] / "vocab.txt")
